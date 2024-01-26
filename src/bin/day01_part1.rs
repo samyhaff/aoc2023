@@ -1,14 +1,8 @@
-use std::env;
-use std::fs;
+use aoc2023::utils::read_input;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    if args.len() != 2 {
-        panic!("Please provide a filename");
-    }
-    let filename = &args[1];
-    let contents = fs::read_to_string(filename).expect("Something went wrong reading the file");
-    let sum = solve(contents);
+    let input = read_input().unwrap();
+    let sum = solve(input);
     println!("Sum: {}", sum);
 }
 
